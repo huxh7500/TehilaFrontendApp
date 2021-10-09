@@ -23,7 +23,7 @@ import {
   } from '../constants/productConstants'
 import axios from 'axios'
 
-const API = 'https://tehilabackendapp.herokuapp.com/'
+const API = 'https://tehilabackendapp.herokuapp.com'
 
 export const listProducts = (keyword = '', pageNumber = '') => async (dispatch)=>{
     try{
