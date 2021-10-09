@@ -22,7 +22,7 @@ import {
 } from '../constants/orderConstants'
 import { logout } from './userActions'
 
-const API = 'http://localhost:5000'
+const API = 'https://tehilabackendapp.herokuapp.com/'
 
 export const createOrder = (order) => async (dispatch, getState) => {
   try {

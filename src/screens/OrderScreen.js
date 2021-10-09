@@ -17,7 +17,7 @@ import {
 } from '../constants/orderConstants'
 
 const OrderScreen = ({ match, history }) => {
-  const API = 'http://localhost:5000'
+  const API = 'https://tehilabackendapp.herokuapp.com/'
 
   const orderId = match.params.id
 
