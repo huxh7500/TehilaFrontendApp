@@ -26,6 +26,10 @@ const HomeScreen = ({ match }) => {
 
   return (
     <div>
+      {!products ? (
+        <Loader />
+      ) : (
+      <div>
       <Meta />
       {!keyword ? (
         <ProductCarousel />
@@ -54,6 +58,8 @@ const HomeScreen = ({ match }) => {
             keyword={keyword ? keyword : ''}
           />
         </div>
+      )}
+      </div>
       )}
     </div>
   )
