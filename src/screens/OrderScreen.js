@@ -17,7 +17,7 @@ import {
 } from '../constants/orderConstants'
 
 const OrderScreen = ({ match, history }) => {
-  const API = 'https://tehilabackendapp.herokuapp.com'
+  const API = 'https://tehilabackendapp.herokuapp.com/'
 
   const orderId = match.params.id
 
@@ -54,7 +54,7 @@ const OrderScreen = ({ match, history }) => {
     }
 
     const addPayPalScript = async () => {
-      const { data: clientId } = await axios.get(`${API}/api/config/paypal`)
+      const { data: clientId } = await axios.get(`${API}/config/paypal`)
       const script = document.createElement('script')
       script.type = 'text/javascript'
       script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`

@@ -22,7 +22,7 @@ import {
 } from '../constants/orderConstants'
 import { logout } from './userActions'
 
-const API = 'https://tehilabackendapp.herokuapp.com'
+const API = 'https://tehilabackendapp.herokuapp.com/'
 
 export const createOrder = (order) => async (dispatch, getState) => {
   try {
@@ -41,7 +41,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.post(`${API}/api/orders`, order, config)
+    const { data } = await axios.post(`${API}/orders`, order, config)
 
     dispatch({
       type: ORDER_CREATE_SUCCESS,
@@ -78,7 +78,7 @@ export const getOrderDetails = (id) => async (dispatch, getState )=>{
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
-        const { data } = await axios.get(`${API}/api/orders/${id}`, config)
+        const { data } = await axios.get(`${API}/orders/${id}`, config)
         dispatch( { 
             type: ORDER_DETAILS_SUCCESS,
             payload: data
@@ -105,7 +105,7 @@ export const payOrder = (orderId, paymentResult) => async (dispatch, getState )=
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
-        const { data } = await axios.put(`${API}/api/orders/${orderId}/pay`, paymentResult, config)
+        const { data } = await axios.put(`${API}/orders/${orderId}/pay`, paymentResult, config)
         dispatch( { 
             type: ORDER_PAY_SUCCESS,
             payload: data
@@ -137,7 +137,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
         },
       }
   
-      const { data } = await axios.get(`${API}/api/orders/myorders`, config)
+      const { data } = await axios.get(`${API}/orders/myorders`, config)
   
       dispatch({
         type: ORDER_LIST_MY_SUCCESS,
@@ -170,7 +170,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
         },
       }
   
-      const { data } = await axios.get(`${API}/api/orders`, config)
+      const { data } = await axios.get(`${API}/orders`, config)
   
       dispatch({
         type: ORDER_LIST_SUCCESS,
@@ -204,7 +204,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
       }
   
       const { data } = await axios.put(
-        `${API}/api/orders/${order._id}/deliver`,
+        `${API}/orders/${order._id}/deliver`,
         {},
         config
       )
